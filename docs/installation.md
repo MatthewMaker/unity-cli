@@ -98,7 +98,7 @@ curl -fsSL https://raw.githubusercontent.com/hoffmann-polycular/unity-cli/main/i
 & ([scriptblock]::Create((irm https://raw.githubusercontent.com/hoffmann-polycular/unity-cli/main/install.ps1))) -WithSkill
 ```
 
-The skill is written to `~/.claude/skills/unity-cli/SKILL.md` (`%USERPROFILE%\.claude\skills\unity-cli\SKILL.md` on Windows). To update it after a unity-cli upgrade, re-run the installer with the flag, or copy `.claude/skills/unity-cli/SKILL.md` from the repo manually.
+The skill is written to `~/.claude/skills/unity-cli/SKILL.md` (`%USERPROFILE%\.claude\skills\unity-cli\SKILL.md` on Windows). If `CLAUDE_CONFIG_DIR` is set, the installer writes to `$CLAUDE_CONFIG_DIR/skills/unity-cli/SKILL.md` instead. To update it after a unity-cli upgrade, re-run the installer with the flag, or copy `.claude/skills/unity-cli/SKILL.md` from the repo manually.
 
 ---
 

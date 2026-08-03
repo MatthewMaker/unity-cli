@@ -25,7 +25,8 @@ Write-Host "Installed unity-cli to $exe"
 & $exe version
 
 if ($WithSkill) {
-    $skillDir = "$env:USERPROFILE\.claude\skills\unity-cli"
+    $claudeDir = if ($env:CLAUDE_CONFIG_DIR) { $env:CLAUDE_CONFIG_DIR } else { "$env:USERPROFILE\.claude" }
+    $skillDir = "$claudeDir\skills\unity-cli"
     New-Item -ItemType Directory -Force -Path $skillDir | Out-Null
     $skillUrl = "https://raw.githubusercontent.com/$repo/main/.claude/skills/unity-cli/SKILL.md"
     Invoke-WebRequest -Uri $skillUrl -OutFile "$skillDir\SKILL.md" -UseBasicParsing
